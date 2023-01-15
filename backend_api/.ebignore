@@ -1,0 +1,8 @@
+node_modules/
+src/
+AWS_SS/
+documentation/
+migrations/
+.idea
+.git
+.elasticbeanstalk/

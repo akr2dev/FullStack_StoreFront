@@ -1,0 +1,42 @@
+version: 2.1
+orbs:
+  eb: circleci/aws-elastic-beanstalk@2.0.1
+  node: circleci/node@5.0.3
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.15.0
+    steps:
+      - checkout
+      - run: npm api:install
+      - run: npm run api:build
+  test:
+    docker:
+      - image: cimg/node:16.15.0
+    steps:
+      - checkout
+      - run: npm api:install
+      - run: npm run api:build
+      - run: npm run api:test
+  deploy:
+    docker:
+       - image: cimg/base:stable
+    steps:
+      - checkout
+      - eb/setup
+      - node/install
+      - run: npm api:install
+      - run: npm run api:build
+      - run: npm run api:deploy
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
+            - build

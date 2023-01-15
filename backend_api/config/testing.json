@@ -1,0 +1,8 @@
+{
+  "Database": {
+    "user": "store_admin",
+    "database": "store_front_test",
+    "password": "admin"
+  },
+  "jwtsec": "test"
+}
