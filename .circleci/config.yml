@@ -8,14 +8,14 @@ jobs:
       - image: cimg/node:16.15.0
     steps:
       - checkout
-      - run: npm api:install
+      - run: npm run api:install
       - run: npm run api:build
   test:
     docker:
       - image: cimg/node:16.15.0
     steps:
       - checkout
-      - run: npm api:install
+      - run: npm run api:install
       - run: npm run api:build
       - run: npm run api:test
   deploy:
@@ -25,7 +25,7 @@ jobs:
       - checkout
       - eb/setup
       - node/install
-      - run: npm api:install
+      - run: npm run api:install
       - run: npm run api:build
       - run: npm run api:deploy
 workflows:

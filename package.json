@@ -5,7 +5,7 @@
     "api:start": "cd backend_api && npm start",
     "api:build": "cd backend_api && npm run build",
     "api:test": "cd backend_api && npm run test",
-    "api:deploy": "cd backend_api && eb deploy"
+    "api:deploy": "cd backend_api && npm run deploy"
   },
   "author": "akr2dev",
   "license": "ISC"

@@ -1,4 +1,6 @@
 branch-defaults:
+  backend:
+    environment: Storebackendapi-prod
   main:
     environment: Storebackendapi-prod
 environment-defaults:
