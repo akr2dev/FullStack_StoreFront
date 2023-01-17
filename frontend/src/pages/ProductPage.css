@@ -1,0 +1,16 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.product-list {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+}
+.product-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.product-item:hover {
+    background-color: #f2f2f2;
+}
