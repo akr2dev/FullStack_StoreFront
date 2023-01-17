@@ -1,6 +1,8 @@
 version: 2.1
 orbs:
   eb: circleci/aws-elastic-beanstalk@2.0.1
+  s3: circleci/aws-s3@3.1.1
+  cli: circleci/aws-cli@3.1.4
   node: circleci/node@5.0.3
 jobs:
   build:
@@ -10,6 +12,8 @@ jobs:
       - checkout
       - run: npm run api:install
       - run: npm run api:build
+      - run: npm run fe:install
+      - run: npm run fe:build
   test:
     docker:
       - image: cimg/node:16.15.0
@@ -24,10 +28,14 @@ jobs:
     steps:
       - checkout
       - eb/setup
+      - aws-cli/setup
       - node/install
       - run: npm run api:install
       - run: npm run api:build
       - run: npm run api:deploy
+      - run: npm run fe:install
+      - run: npm run fe:build
+      - run: npm run fe:deploy
 workflows:
   version: 2
   build-test-deploy:
