@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       - eb/setup
-      - aws-cli/setup
+      - cli/setup
       - node/install
       - run: npm run api:install
       - run: npm run api:build
