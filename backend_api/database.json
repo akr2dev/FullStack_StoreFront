@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "driver": "pg",
+    "user": "store_admin",
+    "password": "admin",
+    "host": "localhost",
+    "database": "store_front"
+  },
+  "test": {
+    "driver": "pg",
+    "user": "store_admin",
+    "password": "admin",
+    "host": "localhost",
+    "database": "store_front_test"
+  },
+  "prod": {
+    "driver": "pg",
+    "user": {
+      "ENV": "DB_USER"
+    },
+    "password": {
+      "ENV":"DB_PASSWORD"
+    },
+    "host": {
+      "ENV": "DB_HOST"
+    },
+    "database": {
+      "ENV":"DB_NAME"
+    }
+  }
+}
