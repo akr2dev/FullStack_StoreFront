@@ -5,7 +5,6 @@ interface Props {}
 const Login: React.FC<Props> = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [authToken, setAuthToken] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
 
