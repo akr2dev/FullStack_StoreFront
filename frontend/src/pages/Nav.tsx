@@ -8,6 +8,9 @@ const Nav: React.FunctionComponent = () => {
                 <li className={"nav-item"}>
                     <Link to={"/products"}>All Products</Link>
                 </li>
+                <li className={"nav-item"}>
+                    <Link to={"/login"}>Login</Link>
+                </li>
             </ul>
         </nav>
     );
