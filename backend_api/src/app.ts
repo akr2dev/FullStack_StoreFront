@@ -1,11 +1,13 @@
 import express from "express";
-
+import cors from "cors";
 import {router as productsRouter} from "./routes/Products";
 import {router as usersRouter} from "./routes/Users";
 import {router as orderRouter} from "./routes/Orders";
 
 const app: express.Application = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors({ origin: "*" }));
 
 app.use(express.urlencoded({ extended: true })); //Parse url encoded payload
 app.use(express.json());
