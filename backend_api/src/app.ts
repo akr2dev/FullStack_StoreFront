@@ -7,7 +7,7 @@ import {router as orderRouter} from "./routes/Orders";
 const app: express.Application = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "http://frontendstore.s3-website-us-east-1.amazonaws.com/", exposedHeaders:"x-auth-token"}));
 
 app.use(express.urlencoded({ extended: true })); //Parse url encoded payload
 app.use(express.json());
