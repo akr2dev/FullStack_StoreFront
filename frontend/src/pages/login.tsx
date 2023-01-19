@@ -18,6 +18,7 @@ const Login: React.FC<Props> = () => {
                 body: JSON.stringify({ email, password }),
             });
             if (res.ok) {
+                console.log(res.headers.get('x-auth-token'));
                 setSuccess(true);
             } else {
                 console.log("Invalid username or password");
