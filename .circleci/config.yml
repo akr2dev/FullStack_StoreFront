@@ -1,4 +1,7 @@
 version: 2.1
+branches:
+  only:
+    - main
 orbs:
   eb: circleci/aws-elastic-beanstalk@2.0.1
   s3: circleci/aws-s3@3.1.1
