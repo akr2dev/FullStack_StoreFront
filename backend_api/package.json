@@ -7,7 +7,7 @@
     "start": "node ./build/app.js",
     "build": "npx tsc",
     "test": "jasmine",
-    "deploy": "eb deploy"
+    "deploy": "sh deploy.sh"
   },
   "author": "akr2dev",
   "license": "ISC",
